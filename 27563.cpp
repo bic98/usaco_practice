@@ -33,5 +33,7 @@ int main(){
 		}else{
 			cout << ans << '\n'; 
 		}
+
+		
 	}
 }
