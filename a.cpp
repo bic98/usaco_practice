@@ -2,7 +2,6 @@
 #define all(v) (v).begin(), (v).end()
 #define compress(v) sort(all(v)), (v).erase(unique(all(v)), (v).end())
 #define IDX(I, x) (lower_bound(all(I), x) - I.begin())
-#define int int64_t
 #define fastio cin.tie(nullptr) -> sync_with_stdio(false)
 #define vi(v) for(auto & z : (v)) cin >> z
 #define vi1(v) for(int z = 1; z <= n; z++) cin >> v[z];
@@ -15,33 +14,26 @@ using tii = tuple<int, int, int>;
 using ll = long long;
 using pll = pair<ll, ll>;
 
-vector<pii> v; 
 
-void solve(){
-    int n; cin >> n; 
-    int ans = 0; 
-    for(const auto& [l, r] : v){
-	if(l > n) break;
-	if(l <= n && n <= r) ans += n - l + 1;
-	else if(n > r) ans += r - l + 1;
-    }
-
-    cout << ans << '\n'; 
+int main(){
+	fastio;
+	int n; cin >> n; 
+	while(n--){
+		string s; cin >> s;  
+		int m = s.size(); 
+		int ans = -1; 
+		for(int i = 0; i < m - 2; i++){
+			string cur = s.substr(i, 2);
+			if(cur == "MO"){
+				if(s[i + 2] == 'O'){
+					ans = m - 3; 
+					break; 
+				}
+				else{
+					ans = m - 2; 
+				}
+			}
+		}
+		cout << ans << '\n'; 
+	}
 }
-
-int32_t main(){
-    fastio;
-    string l = "45"; 
-    string r = "49"; 
-    while(true){
-	int L = stoi(l);
-	int R = stoi(r);
-	if(R > 1e5) break;
-	v.push_back({L, R});
-	l = "4" + l; 
-	r = r + "9";
-    }
-    int t; cin >> t;
-    while(t--) solve();
-}
-

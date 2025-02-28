@@ -15,33 +15,14 @@ using tii = tuple<int, int, int>;
 using ll = long long;
 using pll = pair<ll, ll>;
 
-vector<pii> v; 
-
 void solve(){
-    int n; cin >> n; 
-    int ans = 0; 
-    for(const auto& [l, r] : v){
-	if(l > n) break;
-	if(l <= n && n <= r) ans += n - l + 1;
-	else if(n > r) ans += r - l + 1;
-    }
 
-    cout << ans << '\n'; 
 }
 
 int32_t main(){
     fastio;
-    string l = "45"; 
-    string r = "49"; 
-    while(true){
-	int L = stoi(l);
-	int R = stoi(r);
-	if(R > 1e5) break;
-	v.push_back({L, R});
-	l = "4" + l; 
-	r = r + "9";
-    }
     int t; cin >> t;
     while(t--) solve();
 }
+
 
