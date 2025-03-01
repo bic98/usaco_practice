@@ -16,6 +16,10 @@ using pll = pair<ll, ll>;
 
 int main(){
 	fastio;
-	int n, t; cin >> n >> t; 
+	int n; cin >> n; 
+	vector<int> v(n); vi(v);
+	for(int i =0; i < n; i++){
+		int x; cin >> x; 
+	}
 
 }
