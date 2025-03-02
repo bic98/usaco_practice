@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+#include <cstdint>
 #define fastio cin.tie(nullptr) -> sync_with_stdio(false)
 using namespace std;
 
