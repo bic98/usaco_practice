@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+#define fastio cin.tie(nullptr) -> sync_with_stdio(false)
+using namespace std;
+using ll = long long; 
+
+void solve(){
+	int n, m; cin >> m >> n; 
+	vector<vector<ll>> v(n, vector<ll>(m)); 
+	for(int i = 0; i < n; i++){
+		for(int j = 0; j < m; j++){
+			cin >> v[i][j]; 
+		}
+	}
+	int id = 0; 
+	ll mx = -1e18; 
+	for(int i = 0; i < m; i++){
+		ll k = 1; 
+		for(int j = 0; j < n; j++){
+			k *= v[j][i]; 
+		}
+		if(k >= mx){
+			mx = k; 
+			id = i + 1; 
+		}
+	}
+	cout << id << '\n'; 
+}
+
+
+int main(){
+	fastio; 
+	int t; cin >> t;
+	while(t--){
+		solve(); 
+	}
+}
